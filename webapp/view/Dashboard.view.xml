@@ -39,10 +39,10 @@
                                 <ColumnListItem>
                                     <cells>
                                         <Text text="{IncidentId}" />
-                                        <Text text="{Description}" />
-                                        <Text text="{Category}" />
-                                        <Text text="{Priority}" />
-                                        <ObjectStatus text="{Status}" state="{path: 'Status', formatter: '.formatStatusState'}" />
+                                        <Text text="{IncidentDescription}" />
+                                        <Text text="{IncidentCategory}" />
+                                        <Text text="{IncidentPriority}" />
+                                        <ObjectStatus text="{IncidentStatus}" state="{path: 'IncidentStatus', formatter: '.formatStatusState'}" />
                                         <Text text="{path: 'IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}" />
                                     </cells>
                                 </ColumnListItem>
@@ -63,9 +63,9 @@
                                 <ColumnListItem>
                                     <cells>
                                         <Text text="{RiskId}" />
-                                        <Text text="{Description}" />
-                                        <Text text="{Category}" />
-                                        <ObjectStatus text="{Severity}" state="{path: 'Severity', formatter: '.formatSeverityState'}" />
+                                        <Text text="{RiskDescription}" />
+                                        <Text text="{RiskCategory}" />
+                                        <ObjectStatus text="{RiskSeverity}" state="{path: 'RiskSeverity', formatter: '.formatSeverityState'}" />
                                         <Text text="{Likelihood}" />
                                         <Text text="{MitigationMeasures}" />
                                     </cells>
