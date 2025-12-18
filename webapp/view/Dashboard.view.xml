@@ -1,0 +1,80 @@
+<mvc:View controllerName="ehsm1.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <Page id="dashboardPage" title="{i18n>dashboardTitle}">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout" />
+        </headerContent>
+        <content>
+            <ObjectHeader
+                id="profileHeader"
+                title="{profile>/EmployeeName}"
+                number="{profile>/EmployeeId}"
+                numberUnit="ID">
+                <attributes>
+                    <ObjectAttribute text="{i18n>plant}: {profile>/Plant}" />
+                    <ObjectAttribute text="{i18n>email}: {profile>/Email}" />
+                    <ObjectAttribute text="{i18n>company}: {profile>/Company}" />
+                    <ObjectAttribute text="{i18n>nationality}: {profile>/Nationality}" />
+                    <ObjectAttribute text="{i18n>startDate}: {path: 'profile>/StartDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}" />
+                </attributes>
+            </ObjectHeader>
+
+            <IconTabBar id="idIconTabBar" expanded="true" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://official-service" text="{i18n>incidentsSection}">
+                        <Table id="incidentTable" items="{/IncidentSet}" growing="true" growingThreshold="10">
+                            <columns>
+                                <Column><Text text="{i18n>incidentId}" /></Column>
+                                <Column><Text text="{i18n>description}" /></Column>
+                                <Column><Text text="{i18n>category}" /></Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>priority}" /></Column>
+                                <Column><Text text="{i18n>status}" /></Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>incidentDate}" /></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{IncidentId}" />
+                                        <Text text="{Description}" />
+                                        <Text text="{Category}" />
+                                        <Text text="{Priority}" />
+                                        <ObjectStatus text="{Status}" state="{path: 'Status', formatter: '.formatStatusState'}" />
+                                        <Text text="{path: 'IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://alert" text="{i18n>risksSection}">
+                        <Table id="riskTable" items="{/RiskSet}" growing="true" growingThreshold="10">
+                            <columns>
+                                <Column><Text text="{i18n>riskId}" /></Column>
+                                <Column><Text text="{i18n>description}" /></Column>
+                                <Column><Text text="{i18n>category}" /></Column>
+                                <Column><Text text="{i18n>severity}" /></Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>likelihood}" /></Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>mitigation}" /></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{RiskId}" />
+                                        <Text text="{Description}" />
+                                        <Text text="{Category}" />
+                                        <ObjectStatus text="{Severity}" state="{path: 'Severity', formatter: '.formatSeverityState'}" />
+                                        <Text text="{Likelihood}" />
+                                        <Text text="{MitigationMeasures}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,1 +1,17 @@
-/* Enter your custom styles here */
+/* Custom styles for EHSM Portal */
+
+.sapUiContentPadding {
+    padding: 2rem;
+}
+
+.loginBox {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboardHeader {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}

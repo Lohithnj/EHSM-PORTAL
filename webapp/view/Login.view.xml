@@ -1,0 +1,28 @@
+<mvc:View controllerName="ehsm1.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="loginPage" title="{i18n>loginTitle}">
+                    <content>
+                        <VBox alignItems="Center" justifyContent="Center" class="sapUiMediumMarginTop">
+                            <VBox width="300px" class="sapUiContentPadding">
+                                <Title text="Welcome to EHSM Portal" level="H2" class="sapUiSmallMarginBottom" />
+                                <Label text="{i18n>employeeId}" labelFor="employeeIdInput" />
+                                <Input id="employeeIdInput" placeholder="Enter Employee ID" type="Text" class="sapUiSmallMarginBottom" />
+                                
+                                <Label text="{i18n>password}" labelFor="passwordInput" />
+                                <Input id="passwordInput" placeholder="Enter Password" type="Password" class="sapUiSmallMarginBottom" />
+                                
+                                <Button text="{i18n>loginButton}" press="onLoginPress" type="Emphasized" width="100%" />
+                            </VBox>
+                        </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
